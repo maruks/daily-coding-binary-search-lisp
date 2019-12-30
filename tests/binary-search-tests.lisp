@@ -16,18 +16,18 @@
   (let ((*num-trials* 1000)
 	(*list-size* 1000)
 	(*size* 1000000))
-    (check-it *test-gen*
-	      (lambda (data)
-		(let ((xs (car data))
-		      (elem (cdr data)))
-		  (eql-p (binary-search xs elem) (position elem xs)))))))
+    (t-p (check-it *test-gen*
+		   (lambda (data)
+		     (let ((xs (car data))
+			   (elem (cdr data)))
+		       (eql-p (binary-search xs elem) (position elem xs))))))))
 
 (deftest "binary-search-2-test" ()
   (let ((*num-trials* 1000)
 	(*list-size* 1000)
 	(*size* 1000000))
-    (check-it *test-gen*
-	      (lambda (data)
-		(let ((xs (car data))
-		      (elem (cdr data)))
-		  (eql-p (binary-search-2 xs elem) (position elem xs)))))))
+    (t-p (check-it *test-gen*
+		   (lambda (data)
+		     (let ((xs (car data))
+			   (elem (cdr data)))
+		       (eql-p (binary-search-2 xs elem) (position elem xs))))))))
